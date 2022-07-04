@@ -6,7 +6,7 @@ const BlogDetails = ()=>{
 
     const {id} = useParams();
     const history = useHistory();
-   
+    
     const {data:blog, error, isPending } = useFetch('https://bogbogo.herokuapp.com/blog/'+id);
     console.log("data: ",blog)
     const handleDelete=()=>{
@@ -24,6 +24,9 @@ const BlogDetails = ()=>{
           {blog && (
               <article>
                   <h2>{blog.title}</h2>
+                  <div>
+                      <img src={blog.author} alt="" />
+                  </div>
                   <p>written by {blog.author}</p>
                   <hr/>
                   <div>
