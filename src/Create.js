@@ -4,6 +4,8 @@ import { useHistory } from 'react-router-dom';
 const Create = ()=>{
    const [title,setTitle] = useState('');
    const [body,setBody] = useState('');
+   const [author,setAuthor] = useState('');
+
    const [genre,setGenre] = useState('');
    const [isPending, setIspending] = useState(false)
    const history =useHistory();
@@ -11,10 +13,10 @@ const Create = ()=>{
 
     const handleSubmit = (e)=>{
       e.preventDefault();
-      const newBlog = {title,genre,body};
+      const newBlog = {title,genre,body,author};
 
       setIspending(true);
-      fetch('http://localhost:5000/create',{
+      fetch('https://bogbogo.herokuapp.com/create',{
         method:"POST",
         headers:{"Content-Type":"application/json"},
         body:JSON.stringify(newBlog)
@@ -60,6 +62,14 @@ const Create = ()=>{
             onChange={(e)=>setBody(e.target.value)}
             required
             ></textarea>
+             <label htmlFor="">Author</label>
+
+              <input 
+              value={author}
+              onChange={(e)=>setAuthor(e.target.value)}
+              type="text"
+              required
+              />
               <br />
            {
              !isPending &&  <button>Add Blog</button> 

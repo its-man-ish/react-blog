@@ -7,7 +7,7 @@ const Home = () => {
     
    
      
-    const {data:blogs, isPending, error}= useFetch('http://localhost:5000/blog')
+    const {data:blogs, isPending, error}= useFetch('https://bogbogo.herokuapp.com/blog')
   
 
     return (

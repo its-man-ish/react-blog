@@ -7,10 +7,10 @@ const BlogDetails = ()=>{
     const {id} = useParams();
     const history = useHistory();
    
-    const {data:blog, error, isPending } = useFetch('http://localhost:5000/blog/'+id);
+    const {data:blog, error, isPending } = useFetch('https://bogbogo.herokuapp.com/blog/'+id);
     console.log("data: ",blog)
     const handleDelete=()=>{
-        fetch('http://localhost:5000/blog/'+blog._id,{
+        fetch('https://bogbogo.herokuapp.com/blog/'+blog._id,{
             method:"DELETE"
         })
         .then(()=>{
