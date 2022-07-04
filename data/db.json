@@ -1,0 +1,10 @@
+{
+  "blogs": [
+    {
+      "title": "What is Bog",
+      "genre": "Technology",
+      "body": "Bog is a new way of conwaying your message to general people where you have full rights and security to express your thougts.",
+      "id": 1
+    }
+  ]
+}
